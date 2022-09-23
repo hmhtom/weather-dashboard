@@ -11,11 +11,6 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <!--jQuery UI V1.13.2 Themes:base-->
-    <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
     <!--JS Library-->
     <!--jQuery V3.6.1-->
     <script
@@ -34,14 +29,6 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
-    <!--jQuery UI V1.3.2-->
-    <script
-      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
-      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
-      crossorigin="anonymous"
-    ></script>
-    <!--Icon-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
     <!--Custom Library-->
     <link rel="stylesheet" href="assets/css/style.css" />
     
@@ -72,25 +59,27 @@
         <input class="form-control mb-3" id="searchBar"></input>
         <button type="button"
         class="btn btn-primary btn-lg align-self-center"
+        id="searchBtn"
         data-bs-toggle="offcanvas"
-        data-bs-target="#searchPannel">search</button>
+        data-bs-target="#searchPannel">Search</button>
       </div>
     </side>
-    <main class="m-0 vw-100 user-select-none">
+    <main class="m-0 vw-100">
         <div class="row justify-content-center vw-100">
             <div class="card col-11 col-md-9 col-lg-8">
                 <div class="card-body d-flex flex-column">
-                    <h2 class="card-title fw-bold" id="city">Atlanta <span id="dateNow">(2022/09/22)</span><img src="./assets/image/cloudy.svg" width="80" id="iconNow"></h2>
+                    <h2 class="card-title fw-bold"><span id="city"></span> <span id="dateNow">(2022/09/22)</span><img src="" width="80" id="iconNow"></h2>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Temp: 74.01</li>
-                        <li class="list-group-item">Wind: 66.7 MPH</li>
-                        <li class="list-group-item">Humidity: 46%</li>
-                        <li class="list-group-item">US Index: <span class="badge text-bg-success">0.47</span></li>
+                      <li class="list-group-item" id="description"></li>
+                        <li class="list-group-item" id="tempNow"></li>
+                        <li class="list-group-item" id="windNow"></li>
+                        <li class="list-group-item" id="humidNow"></li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
-        <h3 class="mt-3 fw-bold">5-day Forcast: </h3>
+        <h3 class="mt-3 fw-bold" id="test">1</h3>
         <div class="row justify-content-around g-4 m-3">
             <div class="card col-9 col-md-4 col-lg-2 p-0">
                 <ul class="list-group list-group-flush card-body">
@@ -129,5 +118,6 @@
                 </ul></div>
         </div>
     </main>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
