@@ -5,7 +5,7 @@ let APIkey = 'bfcdb7ca8a694a7cf1617bf136851250'
 //return: parsed ready-to-use API url
 function parseQuery(type){
     let searchUrl = new URL(location.href)
-    return `https://api.openweathermap.org/data/2.5/${type}?${decodeURIComponent(searchUrl.search.substring(1))}&appid=${APIkey}`
+    return `https://api.openweathermap.org/data/2.5/${type}${decodeURIComponent(searchUrl.search)}&appid=${APIkey}`
 }
 
 //Main weather card render
@@ -75,7 +75,9 @@ function renderHistory(){
             renderHistoryBtn(searchHistory[i])
         }
     }else{
-        location.replace(`${location.href.split('?')[0]}?q=toronto`)
+        if(location.href.split('?')[1] !== `q=toronto`){
+            location.replace(`${location.href.split('?')[0]}?q=toronto`)
+        }
     }
 }
 
