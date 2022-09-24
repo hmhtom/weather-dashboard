@@ -1,6 +1,8 @@
+/*custom bg for header*/
 .bg-blue-purple-grdt{
     background-image: linear-gradient(to right, #1184FA, #5900B4);
 }
+/*z-index for Offcanvas toggle btn*/
 .z-1{
     z-index: 1;
 }
