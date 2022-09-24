@@ -69,12 +69,14 @@ function renderHistoryBtn(info){
 function renderHistory(){
     if(localStorage.getItem('history') !== null){
         let searchHistory = JSON.parse(localStorage.getItem('history'))
+        //Location replace acts like recursive calls, base condition added
         if(location.href.split('?')[1] !== `q=${encodeURIComponent(searchHistory[0])}`)
             location.replace(`${location.href.split('?')[0]}?q=${encodeURIComponent(searchHistory[0])}`)
         for(i in searchHistory){
             renderHistoryBtn(searchHistory[i])
         }
     }else{
+        //Location replace acts like recursive calls, base condition added
         if(location.href.split('?')[1] !== `q=toronto`){
             location.replace(`${location.href.split('?')[0]}?q=toronto`)
         }
